@@ -1,8 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { ListComponent } from './list/list.component';
+import { NewComponent } from './new/new.component';
+import { E404Component } from './e404/e404.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'list', component: ListComponent, data: { title: 'Lista de Jogos'} },
+  { path: 'new', component: NewComponent, data: { title: 'Novo Jogo'} },
+  { path: '404', component: E404Component, data: { title: 'Página não encontrada'} },
+  // { path: '404', component: E404Component, data: { title: 'Página não encontrada' } },
+  { path: '**', component: E404Component, data: { title: 'Página não encontrada'} }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
