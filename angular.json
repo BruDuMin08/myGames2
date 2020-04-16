@@ -26,7 +26,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": ["node_modules/jquery/dist/jquery.min.js"]
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -90,7 +92,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": ["node_modules/jquery/dist/jquery.min.js"]
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           }
         },
         "lint": {
@@ -123,6 +127,6 @@
   },
   "defaultProject": "myGames",
   "cli": {
-    "analytics": "ef9a6f76-4678-4e4e-a2fb-5e51ee88535b"
+    "analytics": "9dbc568a-89eb-4c4e-a967-3b6afeea236f"
   }
 }

@@ -6,16 +6,20 @@ import { NewComponent } from './new/new.component';
 import { E404Component } from './e404/e404.component';
 import { AboutComponent } from './about/about.component';
 
-
 const routes: Routes = [
+
+  // Rota não especificada é redirecionada para a "home"
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'list', component: ListComponent, data: { title: 'Lista de Jogos'} },
-  { path: 'new', component: NewComponent, data: { title: 'Novo Jogo'} },
-  { path: 'about', component: AboutComponent, data: { title: 'Sobre o My Games'} },
-  { path: '404', component: E404Component, data: { title: 'Página não encontrada'} },
-    // { path: '404', component: E404Component, data: { title: 'Página não encontrada' } },
-  { path: '**', component: E404Component, data: { title: 'Página não encontrada'} }
+
+  // Rota para a listagem dos games
+  { path: 'list', component: ListComponent, data: { title: 'Lista de Jogos' } },
+    
+  { path: 'new', component: NewComponent, data: { title: 'Novo Jogo' } },
+  { path: 'about', component: AboutComponent, data: { title: 'Sobre o My Games' } },
+
+  // Rota desconhecida é redirecionada para o componente "Erro 404"
+  { path: '**', component: E404Component, data: { title: 'Página não encontrada' } }
 ];
 
 @NgModule({
