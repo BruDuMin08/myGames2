@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule, Router, NavigationEnd } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { filter, map } from 'rxjs/operators';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -38,9 +39,44 @@ export class AppComponent implements OnInit{
         this.titleService.setTitle(title);
         });
   }
+  menuToggle() {
+    $(document).ready(() => {
+
+      if( $('#links').is(':visible') ) {
+        this.menuHide();
+      } else{
+        this.menuShow();
+      }
+    });
+    return false;
+  }
+
+  menuHide() {
+    $('#links').slideUp('fast');
+  }
+
+  menuShow(){
+    $('#links').slideDown('fast');
+  }
 
   ngOnInit(): void {
     this.changeTitle();
+
+    $(document).ready(() => {
+      $(window).resize(() => {
+        if (window.innerWidth > 511){
+          $('#links').show(0);
+        } else {
+          $('#links').hide(0);
+        }
+      });
+
+      $(document).on('click', '#links > a', () => {
+        $('#links').slideUp('fast');
+      });
+
+
+    });
   }
-  }
+}
 

@@ -9,9 +9,10 @@ import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { NewComponent } from './new/new.component';
 import { E404Component } from './e404/e404.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ListComponent, NewComponent, E404Component],
+  declarations: [AppComponent, HomeComponent, ListComponent, NewComponent, E404Component, AboutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
