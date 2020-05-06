@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
 
   // Controla a exibição do menu principal em resoluções mais baixas
   menuToggle() {
-    $(document).ready(() => { // JQuery
+    jQuery(() => { // JQuery
 
       if ($('#links').is(':visible')) { // Se o menu está visível
         this.menuHide(); // Chama o método que oculta o menu
@@ -71,11 +71,11 @@ export class AppComponent implements OnInit {
     // Executa o método que altera o título
     this.changeTitle();
 
-    //
-    $(document).ready(() => { // JQuery
+    // jQuery 02)
+    jQuery(() => { // JQuery
 
-      // Quando a janela for redimensionada
-      $(window).resize(() => {
+      // jQuery 03) Quando a janela for redimensionada
+      $(window).on('resize', () => {
         if (window.innerWidth > 511) { // Se a largura é maior que 511 px
           $('#links').show(0); // Sempre mostra o menu
         } else { // Se a largura é menor ou igual a 511 px

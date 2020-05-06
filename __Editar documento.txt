@@ -1,0 +1,101 @@
+Editar documento
+
+Crie o componente 'edit.component':
+
+  ng g c edit
+
+Edite "app-routing.module.ts" para criar a rota para "edit/edit.component":
+
+  app-routing.module.ts
+  1 ~ 2
+  
+Edite "edit/edit.component.html" para referênciar o formulário e editar o título:
+
+  edit/edit.component.html
+  ~
+
+Edite "list.component.html" para adicionar a rota ao botão editar:
+
+  list.component.html
+  1
+
+Edite "form.component.ts" para receber o Id e carregar os dados do Db para o Form:
+
+  form.component.ts
+  1 ~ 12
+
+TESTE TESTE TESTE >>>>> O form dete ter dados do documento
+
+Edite "form.component.ts" para criar um documento
+
+  form.component.ts
+  13 ~ 18
+
+TESTE TESTE TESTE
+
+---------------------------
+Resolvendo falha da jQuery
+---------------------------
+
+Instale jQuery + Types/jQuery
+
+  npm install jquery @types/jquery
+
+Exite "form.component.ts"
+
+  jQuery 01) Troque "$(document).ready()" por "jQuery()"
+  jQuery 02) Troque "$(document).ready()" por "jQuery()"
+  jQuery 03) Troque "$(window).resize(() => {"  por "$(window).on('resize', () => {"
+
+Edite "app.component.ts"
+
+  jQuery 01) Troque "$(document).ready()" por "jQuery()" --> Linha 46
+  jQuery 02) Troque "$(document).ready()" por "jQuery()" --> Linha 75
+  jQuery 03) Troque "$(window).resize(() => {"  por "$(window).on('resize', () => {" --> Linha 78
+
+TESTE TESTE TESTE
+
+-------------------------------
+Publicando site no GitHub Pages
+-------------------------------
+
+Acesse "environment.ts" e copie a chave firebase completa --> Feche
+
+Edite "environment.prod.ts" e cole a chave firebase completa --> Salve e feche
+
+Instale a ferramenta de páginas do github para angular:
+
+  npm install -g angular-cli-ghpages
+
+  * Se der WARM @angular-devkit/, ignore!!!
+
+Comande
+
+  ng build --prod --base-href https://<username>.github.io/<reponame>/
+
+    <username> --> Seu nome de usuário no GitHub (Case sensitive)
+    <reponame> --> Nome do repositório no GitHub (Case sensitive)
+
+Comande
+
+  angular-cli-ghpages -d dist/<project-name>/ --no-silent
+
+    <project-name> --> Veja o nome da pasta dentro da pasta "dist"
+
+Acesse o site pelo endereço
+
+  https://<username>.github.io/<reponame>/
+
+    <username> --> Seu nome de usuário no GitHub (Case sensitive)
+    <reponame> --> Nome do repositório no GitHub (Case sensitive)
+
+	* Pode ser que seja solicitado seu login e senha do GitHub
+
+	Se solicitado, comande:
+
+		git config --global user.email "<github_email>"
+		git config --global user.name "<github_login>"
+
+			<github_email> --> E-mail cadastrado no GitHub.com
+			<github_login> --> Login cadastrado no GitHub.com
+
